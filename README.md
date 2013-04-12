@@ -1,0 +1,49 @@
+An application of Fully Homomorphic Encryption over Integers
+
+This application is based on the integer-only fully homomorphic encryption
+scheme devised by van Dijk et al. (http://eprint.iacr.org/2009/616). 
+The implementation of the Fully Homomorphic Encryption scheme was obtained
+from https://github.com/rinon/Simple-Homomorphic-Encryption. 
+
+About the application:
+This application uses fully homomorphic encryption to check whether a given 
+integer is present in a file consisting of only integers. Addition of cipher
+texts of the input and each integer in the file is used as the backbone. 
+
+Creation of cipher texts:
+A number is converted to its binary form. Each bit of the number is encrypted
+with the homomorphic public key. Hence, the cipher text of a number is a n-tuple,
+where n is the number of bits. 
+
+Working:
+The cipher texts of each number in the file and the input number is obtained 
+as described above. The cipher text of the input number is added to each number 
+in the file separately and the each such resultant cipher text is stored. These
+resultant cipher texts are then decrypted. Since the cipher text addition is 
+bitwise, if there exists at least one sum where each bit in the decrypted 
+result is even, then the input number is present in the file.
+
+Language:
+C/C++
+
+Requirements:
+GNU g++ compiler
+make
+
+Libraries:
+libcrypto++ (Library for Cryptography in C++)
+g++-multilib (GNU C++ library extension)
+libgmp3 (GNU Multi Precision Library : standard)
+gmplib (GNU Multi Precision Library)
+
+Compile & Run:
+To compile the application, run "make find" in the terminal.
+The executable produced is 'find'. The maximum number of bits required (bit length)
+can be given as a command line argument. Note that this should be larger than the 
+bit length of largest number present in the data file. The default value of bit 
+length is 3. The security parameter (lambda), the maximum number of lines that should
+be parsed in the data file and the maximum bit length can be adjusted in 'ispresent.cpp' 
+file. Default value of the security parameter is 4. Larger numbers can be accomodated
+by appropriately selecting the value of the security parameter. 
+
+% ajaykmathias@gmail.com
