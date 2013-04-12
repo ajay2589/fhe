@@ -42,8 +42,8 @@ The executable produced is 'find'. The maximum number of bits required (bit leng
 can be given as a command line argument. Note that this should be larger than the 
 bit length of largest number present in the data file. The default value of bit 
 length is 3. The security parameter (lambda), the maximum number of lines that should
-be parsed in the data file and the maximum bit length can be adjusted in 'ispresent.cpp' 
-file. Default value of the security parameter is 4. Larger numbers can be accomodated
-by appropriately selecting the value of the security parameter. 
+be parsed in the data file and the maximum bit length can be adjusted in 'ispresent.cpp' file.
+Default value of the security parameter is 4. Larger numbers can be accomodated by
+appropriately selecting the value of the security parameter. 
 
 % ajaykmathias@gmail.com
