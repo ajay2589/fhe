@@ -7,7 +7,7 @@ FIND = find
 find : $(FIND)
 
 $(FIND) : ispresent.o fully_homomorphic.o utilities.o circuit.o security_settings.o
-  $(CC) -o $@ ispresent.o fully_homomorphic.o utilities.o circuit.o security_settings.o $(LDFLAGS)
+	$(CC) -o $@ ispresent.o fully_homomorphic.o utilities.o circuit.o security_settings.o $(LDFLAGS)
 
 ispresent.o : ispresent.cpp
 	$(CC) $(CFLAGS) ispresent.cpp
