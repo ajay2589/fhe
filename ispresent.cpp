@@ -1,12 +1,14 @@
 #include "ispresent.h"
 // the number of bits is taken as a command line argument. Default # 3
+// LAMBDA can be modified for larger numbers: lambda = 4 works fine for 10 bit integers
 
 #define BIT_LENGTH 12
 #define NUM_LINES 100
+#define LAMBDA 4
+
 IsPresent::IsPresent(unsigned int bit_spaces) : bit_spaces(bit_spaces) 
 {
-  int lambda = 4;// can be modified for larger numbers: lambda = 4 works fine for 10 bit integers
-  sec = new SecuritySettings(lambda);
+  sec = new SecuritySettings(LAMBDA);
   fh = new FullyHomomorphic(sec);
   fh->key_gen(sk, pk);
 }
